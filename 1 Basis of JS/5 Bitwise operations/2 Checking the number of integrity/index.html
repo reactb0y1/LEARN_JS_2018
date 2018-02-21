@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// Функция, проверяющая число на целостность
+		function isInteger(value) {
+
+			var valueIntegrity = ~~value;
+
+			if (value == valueIntegrity) {
+				console.log(true)
+			} else {
+				console.log(false)
+			}
+		}
+
+		isInteger(457);
+		isInteger(1.5);
+		isInteger(1);
+		isInteger(-0.5);
+	</script>
+</body>
+</html>
