@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Перепишите 2</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var login = prompt("Ваше имя");
+
+	var message;
+/*
+	if (login == 'Вася') {
+		message = 'Привет';
+	} else if (login == 'Директор') {
+		message = 'Здравствуйте';
+	} else if (login == '') {
+		message = 'Нет логина';
+	} else {
+		message = '';
+	}
+*/
+	var message = (login == "Вася") ? console.log("Привет") :
+		(login == "Директор") ? console.log("Здравствуйте") : 
+		(login == "") ? console.log("Нет логина") :
+		console.log(".")
+	
+</script>
+
+</html>
