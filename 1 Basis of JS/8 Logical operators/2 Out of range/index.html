@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Вне диапазона</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var age = prompt("Возраст, пожалуйста");
+
+	if (age < 14 || age > 90) {
+		console.log("Возраст меньше 14 или больше 90")
+	}
+
+	var whatAge = age >= 14 && age <= 90;
+
+	if (!whatAge) {
+		console.log("Возраст меньше 14 или больше 90")
+	}
+	
+</script>
+
+</html>
