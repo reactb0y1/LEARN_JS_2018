@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Чётные числа с помощью for</title>
+</head>
+<body>
+	
+</body>
+
+	<script>
+/*
+		for (i = 2; i < 11; i + 2) {
+			console.log(i)
+			i = i + 2;
+		}*/
+/*
+		for (i = 0; i < 10; i + 2) {
+			i = i + 2;
+			console.log(i)
+		}*/
+/*
+		for (i = 0; i < 10; i + 8) {
+			i = i + 2;
+			console.log(i)
+		}*/
+			// Без разницы какой шаг итерации, хоть 2, хоть 8, хоть 1. Лишь бы шаг внутри тела был 2
+
+		for (i = 0; i < 10; i++) {
+			if (i%2 == 0) continue
+			i++;
+			console.log(i)
+		}
+			// В этом цикле мы пропускаем все чтные значения
+
+	</script>
+
+</html>
