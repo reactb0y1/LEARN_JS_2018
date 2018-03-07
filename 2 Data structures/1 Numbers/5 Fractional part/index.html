@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Дробная часть числа</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	function getDecimal(num) {
+		var integer = ~~num;
+		var fractional = num - integer;
+
+		if (num > integer) {
+			var fractional = num - integer;
+		} else if (num < integer) {
+			var fractional = integer - num;
+		}
+
+		var fractional = Math.round(fractional * 1000) / 1000;
+
+		return fractional
+	}
+
+	console.log(getDecimal(12.945));
+	console.log(getDecimal(1.2));
+	console.log(getDecimal(-1.2));
+
+	// Код может округлять до тысячной.
+	
+</script>
+
+</html>
