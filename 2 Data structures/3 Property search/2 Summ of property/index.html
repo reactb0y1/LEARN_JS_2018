@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Сумма свойств</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	"use strict";
+
+	var salaries = {
+		"Вася": 100,
+		"Петя": 300,
+		"Даша": 250,
+		"Даfша": 2500,
+	};
+
+	function summProp(obj) {
+
+		var summ = 0;
+		
+		for(var key in obj) {
+			summ += obj[key]
+		}
+
+		console.log(summ)
+
+	}
+
+	summProp(salaries)
+	
+</script>
+
+</html>

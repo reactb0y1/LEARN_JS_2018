@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Объект пустой или нет?</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+	
+	function isEmpty(obj) {
+		var a = 0;
+
+		for(var key in obj) {
+			a++
+		}
+
+		a == 0 ? console.log(true) : console.log(false);
+	}
+
+	var schedule = {};
+
+	isEmpty(schedule); // true
+
+	schedule["8:30"] = "подъём";
+
+	isEmpty(schedule); // false
+
+</script>
+
+</html>
