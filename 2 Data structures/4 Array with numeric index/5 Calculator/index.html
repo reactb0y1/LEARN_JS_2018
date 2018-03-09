@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Калькулятор для введённых значений</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+	
+	var arr = [];
+
+	for(var i = 0; ; i++) {
+		var value = prompt("Введите число");
+
+		if (value == null || value == "" || isNaN(value)) break;
+
+		arr[i] = value;
+		console.log(arr)
+	}
+
+	var summ = 0;
+
+	for(var j = 0; j < arr.length; j++) {
+		// Именно в этой строке преобразуем элемент массива из строки в число
+		summ = summ + +arr[j]
+	}
+
+	console.log(summ)
+
+</script>
+
+</html>

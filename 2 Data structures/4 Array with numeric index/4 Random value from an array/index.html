@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Получить случайное значение из массива</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+
+	function randomValue(arr) {
+		var length = arr.length;
+
+		var rand = Math.floor(Math.random() * length);
+
+		console.log(arr[rand]);
+	}
+
+	randomValue(arr)
+
+</script>
+
+</html>
