@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Функция removeClass</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var obj = {
+		className: 'open open menu red';
+	}
+
+	function removeClass(obj, rClass) {
+		var arr = obj.className.split(" ");
+
+		for(var j = 0; j < arr.length; j++) {
+
+			for(var k = 0; k < arr.length; k++) {
+
+				if (j >/*> / <*/ k && arr[j] == arr[k]) {
+					arr.splice(k /*k / j*/, 1)
+				}
+
+			}
+
+		}
+
+		for (var i = 0; i < arr.length; i++) {
+
+			if(rClass == arr[i]) {
+				arr.splice(i, 1)
+			}
+
+		}
+
+		obj.className = arr.join(" ");
+
+		console.log(obj.className)
+	}
+
+	removeClass(obj, "open"); // obj.className='menu'
+	removeClass(obj, "blabla"); // без изменений (нет такого класса)
+	removeClass(obj, "red"); // без изменений (нет такого класса)
+	
+</script>
+
+</html>
+
+<!--
+
+В целом задание выполнил.
+А вот дополнительное усложнение только отчасти.
+Если в оригинальной строке были повторения, то функция удаляет их, но только если повтор всего один. Поэтому задачу не буду считать в полной мере решённой
+
+-->

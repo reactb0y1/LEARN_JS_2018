@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Случайный порялок в массиве</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+	
+	var arr = [1, 2, 3, 4, 5];
+
+	// arr.sort(randomOrder);
+
+	function randomOrder() {
+		min = - 0.5;
+		max = arr.length + 0.5;
+
+		var random = Math.random(),
+			randomMin = random * min,
+			randomMax = random * max,
+			randomMinMaxDifference = randomMax - randomMin,
+			randomNonInteger = randomMinMaxDifference + min,
+			randomInteger = Math.round(randomNonInteger);
+
+		return randomInteger;
+
+		/*
+		function compareRandom(a, b) {
+			return Math.random() - 0.5;
+		}
+		*/
+	}
+
+	for(var i = 0; i < 20; i++) {
+		console.log(arr.sort(randomOrder)); // элементы в случайном порядке, например [3,5,1,2,4]
+	}
+
+</script>
+
+</html>
+
+<!--
+
+Как может выглядеть алгоритм, который придаёт случайный порядок элементам массива? Тут, скорее, важен вопрос о том, как сделать так, чтобы текущее случайное число не оказалось равным хотя бы какому-либо из предыдущих?
+
+Очень удивился, когда обычная функция по рассчёту случайного числа в заданном диапазоне сработала. Но оказалось, что решение может быть ещё проще.
+
+-->

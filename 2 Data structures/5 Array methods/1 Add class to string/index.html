@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Добавить класс в строку</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var obj = {
+		className: 'open menu'
+	}
+
+	function addClass(obj, cls) {
+
+		// Сперва строку преобразуем в массив
+		var arr = obj.className.split(" ");
+
+		// Организовываем цикл длинной массива
+		for(var i = 0; i < arr.length; i++) {
+
+			// Проверяем еслть ли у массива такие же елементы
+			if (arr[i] === cls) {
+				// если да, то выходим из цикла вовсе
+				break
+			} else {
+				// если нет, то добавляем в массив элемент
+				arr.push(cls)
+				// и тоже выходим из цикла
+				break
+			}
+			
+		}
+
+		// А тут обязательно массив преобразовываем в строку
+		obj.className = arr.join(" ")
+
+		console.log(obj.className)
+
+	}
+
+	addClass(obj, 'new'); // obj.className='open menu new'
+	addClass(obj, 'open'); // без изменений (класс уже существует)
+	addClass(obj, 'me'); // obj.className='open menu new me'
+	
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Скопировать и отсортировать массив</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var arr = ["HTML", "JavaScript", "CSS"];
+	var arrSorted = arrCopyAndSorted(arr);
+
+	function arrCopyAndSorted(arr) {
+		var arrClone = [];
+
+		for(var i = 0; i < arr.length; i++) {
+			arrClone[i] = arr[i]
+		}
+
+		return arrClone.sort()
+	}
+
+	console.log( arrSorted ); // CSS, HTML, JavaScript
+	console.log( arr ); // HTML, JavaScript, CSS (без изменений)
+
+	
+</script>
+
+</html>
+
+<!--
+
+Сортировка у меня получилась. Однако ценой того, что эти изменения происходят и в оригинальном массиве, что не соответствует требованию задачи. В общем, как мне сделать так, чтобы оригинальный массив сохранил свою самобытность? Наверное, на каком-то этапе нужно клонировать оригинальный массив, и сортировку проводить уже над клоном.
+
+-->

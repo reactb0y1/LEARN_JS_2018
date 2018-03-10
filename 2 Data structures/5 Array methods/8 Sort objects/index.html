@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Сортировка объектов</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var vasya = { name: "Вася", age: 23 };
+	var masha = { name: "Маша", age: 18 };
+	var vovochka = { name: "Вовочка", age: 6 };
+
+	var people = [ vasya , masha , vovochka ];
+
+	function sortAge(a, b) {
+		
+		if (a > b) return 1;
+		if (a < b) return -1;
+
+	}
+
+	people.sort(sortAge)
+
+	console.log(people)
+
+	// теперь people: [vovochka, masha, vasya]
+	// alert(people[0].age) // 6
+	
+</script>
+
+</html>
+
+<!--
+
+Что мы видим в условиях задачи? Во-первых, это три аналогичных объета, где первое свойство - имя, а второе - возраст. Во-вторых, есть массив, где сложены эти объекты.
+
+-->

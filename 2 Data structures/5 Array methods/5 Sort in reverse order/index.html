@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Сортировать в обратном порядке</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var arr = [5, 2, 1, -10, 8];
+
+	arr.sort(compareNumeric);
+
+	function compareNumeric(a, b) {
+		if (a > b) return -1;
+		if (a < b) return 1;
+	}
+
+	alert( arr ); // 8, 5, 2, 1, -10
+	
+</script>
+
+</html>
+
+<!--
+
+Это тема сортировки. Тема общепрограммистская.
+Мой вариант скопипасченый
+
+-->
