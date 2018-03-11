@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Массив частичных сумм</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	arr = [ 1, 2, 3, 4, 5 ];
+
+	function getSums(arr) {
+		
+		var result = arr.reduce(function(sum, curent) {
+			return sum + curent
+		});
+
+		console.log(result)
+
+	}
+
+	getSums(arr);
+	
+</script>
+
+</html>
