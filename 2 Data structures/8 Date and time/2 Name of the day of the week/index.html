@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Имя дня недели</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+// var date = new Date(2012,0,3);  // 3 января 2012
+// alert( getWeekDay(date) );      // Должно вывести 'вт'
+
+	var date = new Date(2012,0,3);  // 3 января 2012
+
+	function getWeekDay(date) {
+
+		var dayOfWeek = date.getDay();
+/*
+		if (dayOfWeek == 0) {
+			console.log("вс")
+		} else if (dayOfWeek == 1) {
+			console.log("пн")
+		} else if (dayOfWeek == 2) {
+			console.log("вт")
+		} else if (dayOfWeek == 3) {
+			console.log("ср")
+		} else if (dayOfWeek == 4) {
+			console.log("чт")
+		} else if (dayOfWeek == 5) {
+			console.log("пт")
+		} else if (dayOfWeek == 6) {
+			console.log("сб")
+		}*/
+/*
+		(dayOfWeek == 0) ? console.log("вс") :
+		(dayOfWeek == 1) ? console.log("пн") :
+		(dayOfWeek == 2) ? console.log("вт") :
+		(dayOfWeek == 3) ? console.log("ср") :
+		(dayOfWeek == 4) ? console.log("чт") :
+		(dayOfWeek == 5) ? console.log("пт") :
+		(dayOfWeek == 6) ? console.log("сб") :
+		""*/
+
+		
+		// Решение от автора
+		
+		var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+		console.log(days[date.getDay()]);
+		
+
+
+		
+	}
+
+	getWeekDay(date)
+
+</script>
+
+</html>
