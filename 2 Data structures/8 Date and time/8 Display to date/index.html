@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Вывести дату в формате дд.мм.гг</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var date = new Date(2014, 0, 30); // 30 января 2014
+
+	function formatDate(date) {
+
+		// Рассчитываем число...
+		var day = String(date.getDate());
+
+		// ... и немного колдуем над ним
+		if (day < 10) {
+			day = 0 + day
+		}
+
+		// То же самое
+		var month = String(date.getMonth() + 1);
+
+		if (month < 10) {
+			month = 0 + month
+		}
+
+		// Почти то же самое
+		var year = String(date.getFullYear()),
+			year = year[2] + year[3];
+
+		// Склеиваем
+		var result = day + "." + month + "." + year
+
+		console.log(result)
+	}
+
+	formatDate(date); // '30.01.14'
+	
+</script>
+
+</html>

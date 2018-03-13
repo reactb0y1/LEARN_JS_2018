@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Относительное форматирование даты</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	function formatDate(date) {
+		// Сейчас в милисекундах
+		var now = new Date();
+		// Узнаём разницу
+		var result = now - date;
+
+		var fDate = String(date.getDate());
+		if (fDate < 10) {
+			fDate = "0" + fDate
+		}
+
+		var fMonth = date.getMonth() + 1;
+		if (fMonth < 10) {
+			fMonth = "0" + fMonth
+		}
+
+		var fYear = String(date.getFullYear()),
+			fYear = fYear[2] + fYear[3];
+
+		var fHourse = date.getHours();
+		if (fHourse < 10) {
+			fHourse = "0" + fHourse
+		}
+
+		var fMinutes = date.getMinutes();
+		if (fMinutes < 10) {
+			fMinutes = "0" + fMinutes
+		}
+
+		var time = fDate + "." + fMonth + "." + fYear + " " + fHourse + ":" + fMinutes
+
+		if (result < 1001) {
+			console.log("Только что")
+		} else if (result < 60 * 1000 + 1) {
+			console.log("Прошло " + result/1000 + " c.")
+		} else if (result < 60 * 60 * 1000 + 1) {
+			console.log("Прошло " + result/(1000 * 60) + " м.")
+		} else {
+			console.log(time);
+		}
+
+
+	}
+
+	formatDate(new Date(new Date - 1)); // "только что"
+	formatDate(new Date(new Date - 30 * 1000)); // "30 сек. назад"
+	formatDate(new Date(new Date - 5 * 60 * 1000)); // "5 мин. назад"
+	formatDate(new Date(new Date - 86400 * 1000)); // вчерашняя дата в формате "дд.мм.гг чч:мм"
+	
+</script>
+
+</html>
+
+<!--
+Единственное, что я забыл сделать - это добавить единицу к значению месяца
+-->
