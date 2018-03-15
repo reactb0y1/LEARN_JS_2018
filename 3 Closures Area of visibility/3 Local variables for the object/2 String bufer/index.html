@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Функция - строковый буфер</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	function makeBuffer() {
+		var value = "";
+
+		return function (word) {
+
+			if (word == undefined) {
+				return value;
+			}
+
+			value = value + word;
+			return value;
+		}
+	}
+
+	var buffer = makeBuffer();
+
+	// добавить значения к буферу
+	// buffer('Замыкания');
+	// buffer(' Использовать');
+	// buffer(' Нужно!');
+	buffer(0);
+	buffer(0);
+	buffer(6);
+
+	// получить текущее значение
+	console.log( buffer() ); // Замыкания Использовать Нужно!
+	
+</script>
+
+</html>
+
+<!--
+У меня почти получилось. То есть строки склеиваются. склеиваются в нужном порядке. Но при вызове buffer() к строке прикрепляется undefined.
+
+Вау! У меня всё работает
+-->
