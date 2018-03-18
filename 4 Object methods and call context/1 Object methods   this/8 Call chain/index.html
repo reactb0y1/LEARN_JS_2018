@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Цепочка вызовов</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	var ladder = {
+		step: 0,
+		up: function() { // вверх по лестнице
+			this.step++;
+			return this;
+		},
+		down: function() { // вниз по лестнице
+			this.step--;
+			return this;
+		},
+		showStep: function() { // вывести текущую ступеньку
+			console.log( this.step );
+		}
+	};
+/*
+	ladder.up();
+	ladder.up();
+	ladder.down();
+	ladder.showStep(); // 1*/
+	
+	ladder.up().up().down().up().down().showStep(); // 1
+</script>
+
+</html>
+
+<!--
+Оказывается, цепочки вызовов (ченинг) делаются совершенно легко. Прочто в конец метода нужно добавить return this. Всё просто.
+Однако, нужно признать, что решил я задачу не самостоятельно, а загуглив
+-->
