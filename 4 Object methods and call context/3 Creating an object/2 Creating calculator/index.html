@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Создать Calculator при помощи конструктора</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	function Calculator() {
+
+		this.read = function() {
+			this.a = prompt("Введите первое число");
+			this.b = prompt("Введите второе число");
+		},
+
+		this.sum = function() {
+			return +this.a + +this.b
+		},
+
+		this.mul = function() {
+			return this.a * this.b
+		}
+		
+	}
+
+	var calculator = new Calculator();
+	calculator.read();
+	console.log( "Сумма = " + calculator.sum() );
+	console.log( "Произведение = " + calculator.mul() );
+	
+	var calculator2 = new Calculator();
+	calculator2.read();
+	console.log( "Сумма = " + calculator2.sum() );
+	console.log( "Произведение = " + calculator2.mul() );
+
+	
+</script>
+
+</html>

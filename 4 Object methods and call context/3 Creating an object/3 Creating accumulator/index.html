@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Создать Accumulator при помощи конструктора</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+
+	function Accumulator(startingValue) {
+
+		this.sum = 0;
+		
+		this.read = function() {
+			this.a = prompt("Введите число")
+			this.sum += +this.a
+		}
+
+		this.value = function valueCreate() {
+			this.value = this.sum + startingValue;
+			return this.value;
+		}
+
+		// return 
+
+	}
+
+	var accumulator = new Accumulator(1); // начальное значение 1
+	accumulator.read(); // прибавит ввод prompt к текущему значению
+	console.log( "Введённое число: " + accumulator.a + ", " + "сумма: " + accumulator.sum ); // выведет текущее значение
+	accumulator.read(); // прибавит ввод prompt к текущему значению
+	console.log( "Введённое число: " + accumulator.a + ", " + "сумма: " + accumulator.sum ); // выведет текущее значение
+	accumulator.read(); // прибавит ввод prompt к текущему значению
+	console.log( "Введённое число: " + accumulator.a + ", " + "сумма: " + accumulator.sum ); // выведет текущее значение
+	accumulator.read(); // прибавит ввод prompt к текущему значению
+	console.log( "Введённое число: " + accumulator.a + ", " + "сумма: " + accumulator.sum ); // выведет текущее значение
+	console.log( accumulator.value() ); // выведет текущее значение
+	
+</script>
+
+</html>
+<!--
+Из всех accumulator.read() у меня срабатывает последняя. То есть все предыдущие вызовы игнорируются. Как мне сделать так. чтобы свойство перезаписывало при каждом вызове метода своё значение?
+
+У меня почти получилось: сумма накапливается, но вывести её с допавлением изначального значения не получается
+
+У меня получилось, но с некотрорым нарушением условия: accumulator.value из свойства я превратил в метод. Другими словами, я не пойму как 
+
+-->
