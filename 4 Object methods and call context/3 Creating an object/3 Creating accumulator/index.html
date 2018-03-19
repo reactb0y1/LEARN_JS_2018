@@ -12,17 +12,17 @@
 
 	function Accumulator(startingValue) {
 
-		this.sum = 0;
+		this.value = startingValue;
 		
 		this.read = function() {
 			this.a = prompt("Введите число")
-			this.sum += +this.a
+			this.value += +this.a
 		}
 
-		this.value = function valueCreate() {
+/*		this.value = function valueCreate() {
 			this.value = this.sum + startingValue;
 			return this.value;
-		}
+		}*/
 
 		// return 
 
@@ -37,7 +37,7 @@
 	console.log( "Введённое число: " + accumulator.a + ", " + "сумма: " + accumulator.sum ); // выведет текущее значение
 	accumulator.read(); // прибавит ввод prompt к текущему значению
 	console.log( "Введённое число: " + accumulator.a + ", " + "сумма: " + accumulator.sum ); // выведет текущее значение
-	console.log( accumulator.value() ); // выведет текущее значение
+	console.log( accumulator.value ); // выведет текущее значение
 	
 </script>
 
@@ -47,6 +47,10 @@
 
 У меня почти получилось: сумма накапливается, но вывести её с допавлением изначального значения не получается
 
-У меня получилось, но с некотрорым нарушением условия: accumulator.value из свойства я превратил в метод. Другими словами, я не пойму как 
+У меня получилось, но с некотрорым нарушением условия: accumulator.value из свойства я превратил в метод. Другими словами, я не пойму как сделать так, чтобы свойство объекта накапливалось.
+
+Нет, у меня всё получилось.
+
+В общем даже получилось решить двумя способам: где value - свойство объекта, и где value() - метод объекта
 
 -->
