@@ -9,35 +9,36 @@
 </body>
 
 <script>
-	// Вариант решение, где геттеры и сеттеры применяются к созданному объекту, а не к конструктору
+	// Вариант решение, где геттеры и сеттеры применяются к конструктору, а не к созданному на его основе объекта
 
 	function User(fullName) {
 		this.fullName = fullName;
+
+		Object.defineProperty(this, "firstName", {
+			get: function() {
+				return this.fullName.split(" ")[0];
+			},
+			set: function(value) {
+				var arr = this.fullName.split(" ");
+				arr[0] = value;
+				this.fullName = arr.join(" ");
+			}
+		})
+
+		Object.defineProperty(this, "lastName", {
+			get: function() {
+				return this.fullName.split(" ")[1];
+			},
+			set: function(value) {
+				var arr = this.fullName.split(" ");
+				arr[1] = value;
+				this.fullName = arr.join(" ");
+			}
+		})
 	}
 
 	var vasya = new User("Василий Попкин");
 
-	Object.defineProperty(vasya, "firstName", {
-		get: function() {
-			return this.fullName.split(" ")[0];
-		},
-		set: function(value) {
-			var arr = this.fullName.split(" ");
-			arr[0] = value;
-			this.fullName = arr.join(" ");
-		}
-	})
-
-	Object.defineProperty(vasya, "lastName", {
-		get: function() {
-			return this.fullName.split(" ")[1];
-		},
-		set: function(value) {
-			var arr = this.fullName.split(" ");
-			arr[1] = value;
-			this.fullName = arr.join(" ");
-		}
-	})
 
 	// чтение firstName/lastName
 	console.log( vasya.firstName ); // Василий
@@ -60,5 +61,6 @@
 
 В обшщем у меня получилось прописывать и геттеры и сеттеры. Но хотелось бы узнать: можно ли их прописать не к уже созданному объекту, а к конструктору? То есть в нашем случае не к vasya, а к User.
 
+Всё оказлось просто: нужно переместить метод Object.defineProperty в конструктор и первый параметр заменить на this. И всё.
 
 -->
