@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Добавить get/set-свойства</title>
+</head>
+<body>
+	
+</body>
+
+<script>
+	// Вариант решение, где геттеры и сеттеры применяются к созданному объекту, а не к конструктору
+
+	function User(fullName) {
+		this.fullName = fullName;
+	}
+
+	var vasya = new User("Василий Попкин");
+
+	Object.defineProperty(vasya, "firstName", {
+		get: function() {
+			return this.fullName.split(" ")[0];
+		},
+		set: function(value) {
+			var arr = this.fullName.split(" ");
+			arr[0] = value;
+			this.fullName = arr.join(" ");
+		}
+	})
+
+	Object.defineProperty(vasya, "lastName", {
+		get: function() {
+			return this.fullName.split(" ")[1];
+		},
+		set: function(value) {
+			var arr = this.fullName.split(" ");
+			arr[1] = value;
+			this.fullName = arr.join(" ");
+		}
+	})
+
+	// чтение firstName/lastName
+	console.log( vasya.firstName ); // Василий
+	console.log( vasya.lastName ); // Попкин
+
+	// запись в lastName
+	vasya.lastName = 'Сидоров';
+
+	console.log( vasya.fullName ); // Василий Сидоров
+	
+</script>
+
+</html>
+
+<!--
+Что у меня получилось на данный момет=нт?
+Получилось записать геттер для объекта во вне. А не получилось или пока не пробовал: записать сеттеры, записать в литералах, записать в конструкторе.
+
+У меня не получалось затать сеттер. Оказалось, что нельзя для одного и того же свойства объекта дважды вызывать метод defineProperty (по крайней мере в пределах одной области видимости). ТО есть и геттер не работал, если я менял местами вызов метода для одного и того же свойства. Просто надо геттер и сеттер объявлять в пределах одного вызова defineProperty.
+
+В обшщем у меня получилось прописывать и геттеры и сеттеры. Но хотелось бы узнать: можно ли их прописать не к уже созданному объекту, а к конструктору? То есть в нашем случае не к vasya, а к User.
+
+
+-->
