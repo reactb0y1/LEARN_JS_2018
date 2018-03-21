@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Перепишите суммирование аргументов</title>
+</head>
+<body>
+	<!-- Для решения примените метод reduce к arguments, используя call, apply или одалживание метода. -->
+</body>
+
+<script>
+	
+	function sumArgs() {
+
+		var join = [].join; // скопируем ссылку на функцию в переменную
+
+		// вызовем join с this=arguments,
+		// этот вызов эквивалентен arguments.join(':') из примера выше
+		var argStr = join.call(arguments, ':');
+
+		var arr = argStr.split(":");
+		
+
+		var result = arr.reduce(function(sum, current) {
+			return +sum + +current;
+		}, 0);
+
+		return result
+
+	}
+
+	console.log( sumArgs(1, 2, 3) ); // 6
+
+</script>
+
+</html>
+
+<!--
+Получилось, но в полном соответствии с методологией карикатурного ИТ-шника из анкедотов, который всё скопировал и сам удивлён, что код работает правильно
+-->
